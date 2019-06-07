@@ -1,0 +1,123 @@
+// ДЗ5.2 Объекты. Использование массивов
+
+// Ваше имя и фамилия: Hanna Skoropadska
+
+// В этой серии мы реализуем прототип социальной сети
+// 1. Создайте 4 типовых объекта реализующих профиль
+// обязательные свойства у всех объектов: userId, firstName, lastName, friends (массив, пояснение ниже)
+// + добавьте свои произвольные свойства с использованием boolean и null
+
+const user1 = {
+  userId: 8763842,
+  name: {
+    firstName: 'Hanna',
+    lastName: 'Skoropadska'
+  },
+  email: 'tot32@gmail.com',
+  phoneNo: null,
+  isOnline: true,
+  friends: []
+};
+const user2 = {
+  userId: 8763843,
+  name: {
+    firstName: 'Victoria',
+    lastName: 'Palmer',
+  },
+  email: 'vicpal@gmail.com',
+  phoneNo: null,
+  isOnline: false,
+  friends: []
+};
+const user3 = {
+  userId: 8763844,
+  name: {
+    firstName: 'Megan',
+    lastName: 'McCortny',
+  },
+  email: 'mmcc@gmail.com',
+  phoneNo: null,
+  isOnline: false,
+  friends: []
+};
+const user4 = {
+  userId: 8763845,
+  name: {
+    firstName: 'Alma',
+    lastName: 'Gallardo',
+  },
+  email: 'agallardo@gmail.com',
+  phoneNo: 925864856,
+  isOnline: true,
+  friends: []
+};
+
+
+
+
+// 2. Убедитесь что свойство friends заполнено.ngth
+// В этом свойстве хранится массив, элементы массива - ссылки на объекты - профили других пользователей.
+// (Соответственно, если у нас всего 4 объекта, то
+//  в свойстве friends у каждого может быть от 1 до 3 элементов в массиве).
+
+user1.friends = [user2, user4, user3];
+user2.friends = [user1, user3, user4];
+user3.friends = [user2, user1];
+user4.friends = [user2, user1];
+
+
+// 3. Задайте переменную вне этих объектов и запишите в нее количество всех друзей (даже если они повторяются)
+// (используйте длины массивов, в которых записаны все эти друзья)
+
+let allFriends = user1.friends.length + user2.friends.length + user3.friends.length + user4.friends.length;
+
+console.log(allFriends);
+
+// 4. Постройте рабочий длинный путь по друзьям от одного к другому,
+// чтобы вернуться в исходный объект но не менее чем через 7 других
+// Пример: user1.friends[1].friends[0].fiends[2]...
+// Результат выведите в консоль
+// (можете проходить по два раза через один и тот же объект, или создавайте новые, но звеньев должно быть 7)
+// (то есть если вы начали с user1, то и вывести должны его же)
+
+let path = user1.friends[0].friends[1].friends[0].friends[2].friends[0].friends[0];
+console.log('!!!!!!!!');
+console.log(path);
+
+
+// 5. Релизуйте в этом задании помимо всего прочего массив массивов.
+// Назначение и содержение на ваше усмотрение. Если придумываете свое - опишите назначение в комментарии.
+// Если затрудняетесь, то пример от меня: создайте массив - меню ресторана,
+// первый элемент - массив с appetizers, второй - салаты, третий - главные блюда,
+// четвертый - десерты, пятый - напитки.s
+// Каждый внутренний массив - не больше трех элементов.
+// * А потом с помощью if else попробуйте проверить,
+// есть ли в вашем меню какое-нибудь конкретное блюдо/напиток.
+
+
+let coffeeShop = [
+  ['Irish', 'Americano', 'Macchiatto', 'Glasse', 'Mocha'],   //espresso
+  ['Cappuccino', 'Latte', 'Mocco', 'Brew'],                  //milkCoffee
+  ['Mint', 'Earl Grey', 'Herbal', 'Hibiscus', 'Matcha'],     //tea
+  ['Minted Iced Brew', 'Coconut Orange Latte', 'Ginger Snap Latte'] //local favorites
+];
+
+
+if(coffeeShop[1][1] === 'Latte'){
+  console.log('Take two!');
+} else {console.log('Go to another coffeeshop')};
+
+//OR
+
+if (coffeeShop[1].includes('Latte')){
+  console.log('Have coffee break');
+} else {
+  console.log('Next time');
+}
+
+
+
+
+        
+
+
