@@ -64,7 +64,10 @@ user1.friends = [user2, user4, user3];
 user2.friends = [user1, user3, user4];
 user3.friends = [user2, user1];
 user4.friends = [user2, user1];
-
+console.log(user1.friends.length > 0);
+console.log(user2.friends.length > 0);
+console.log(user3.friends.length > 0);
+console.log(user4.friends.length > 0);
 
 // 3. Задайте переменную вне этих объектов и запишите в нее количество всех друзей (даже если они повторяются)
 // (используйте длины массивов, в которых записаны все эти друзья)
@@ -105,7 +108,9 @@ let coffeeShop = [
 
 if(coffeeShop[1][1] === 'Latte'){
   console.log('Take two!');
-} else {console.log('Go to another coffeeshop')};
+} else {
+  console.log('Go to another coffeeshop');
+};
 
 //OR
 
@@ -114,6 +119,14 @@ if (coffeeShop[1].includes('Latte')){
 } else {
   console.log('Next time');
 }
+
+
+
+
+        
+
+
+
 
 
 
