@@ -1,0 +1,32 @@
+select d.rate, count(*)
+from driver d
+group by d.rate
+
+select d.first_name, count(l.id_list)
+from driver d
+left join list l on l.id_driver = d.id_driver
+group by d.first_name
+
+select d.id_driver, avg(l.minutes)
+from driver d
+left join list l on l.id_driver = d.id_driver
+group by d.id_driver
+
+
+select d.first_name, count(c.id_car)
+from driver d
+left join car c on c.id_driver = d.id_driver
+group by d.first_name
+having count(c.id_car) > 1
+
+select d.id_driver, d.first_name, sum(l.minutes)
+from driver d
+left join list l on l.id_driver = d.id_driver
+group by d.id_driver, d.first_name
+
+select l.minutes, count(*)
+from list l
+group by l.minutes
+
+select count(distinct d.rate)
+from driver d
