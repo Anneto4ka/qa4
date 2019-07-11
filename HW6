@@ -73,6 +73,21 @@ for (i = back.length - 1; i >= 0; i--) {
 console.log('******')
 
 
+// ДЗ8. Цикл в цикле / Hanna Skoropadska
+
+// С использованием цикла в цикле получить из исходного массива строку типа: "fEdCbA"
+// Нельзя использовать никакие встроенные методы.
+
+const arr = ['Ab', 'Cd', 'Ef'];
+let res = '';
+
+for (let i = arr.length - 1; i >= 0; i--){
+  for (let j = arr[i].length - 1; j >= 0; j--){
+    res = res + arr[i][j];
+  }
+}
+console.log(res);
+
 
 
 
