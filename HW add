@@ -1,0 +1,73 @@
+// Hanna Skoropadska
+
+//1. Метод, который проверяет наличие подстроки и возвращает true/false
+// str.includes(searchString [, position = 0]);
+
+let str1 = 'Are you ready?';
+console.log(str1.includes('you'));
+console.log(str1.includes('you', 6));
+
+//проверить, что str1 содержит элемент 'You' и 'ready' (внимательно к большим буквам!)
+
+console.log(str1.includes('You'));
+console.log(str1.includes('ready'));
+
+//2. Метод, который возвращает символ по указанному индексу
+// str.charAt(index);         index: 0, 1, ..., str.length-1
+
+let str2 = 'Where the $ sign?'
+
+console.log(str2.charAt(str2.length - 1));
+
+// какой символ стоит на 3-й позиции? А на 7-й?
+// вывести знак $, обратившись к строке по индексу
+
+console.log(str2.charAt(3));
+console.log(str2.charAt(7));
+console.log(str2.charAt(10));
+
+
+//3. Метод, который выводит первый индекс, по которому встретится заданный символ (или -1, если не нашел)
+// str.indexOf(searchValue [, fromIndex = 0]);
+
+let str3 = 'sdf345jlkj798'
+console.log(str3.indexOf('8'));  //12
+console.log(str3.indexOf('u'));  //-1
+
+// на какой позиции стоит символ '4'?  на какой позиции стоит символ 'l'?  на какой позиции стоит символ 'j'?
+// что если передать в метод вместо searchValue пустую строку?
+
+console.log(str3.indexOf('4'));  //4
+console.log(str3.indexOf('l'));  //7
+console.log(str3.indexOf('j'));  //6
+
+//4. Метод, который выводит первый индекс с конца, по которому встретится заданный символ (или -1, если не нашел)
+// str.lastIndexOf(searchValue [, fromIndex = str.length]);
+
+// выполните все задания из пункта 3, но уже с методом lastIndexOf
+
+console.log(str3.lastIndexOf('8'));
+console.log(str3.lastIndexOf('u'));
+console.log(str3.lastIndexOf('4'));
+console.log(str3.lastIndexOf('l'));
+console.log(str3.lastIndexOf('j'));
+
+//5. Методы, ищущие сопоставления между регулярным выражением и строкой: str.search([regexp]) и str.match(regexp).
+// str.search([regexp]) возвращает индекс первого сопоставления (или -1, если нет совпадения).
+// str.match(regexp) возвращает массив совпадений, найденных в строке.
+
+let str5 = 'lh 3h4 kj ekhte; f f5e lj  5g ';
+
+// на какой позиции впервые встретится сочетание "цифра, а следом за ней буква" (этому соответствует регулярное выражение /\d\w/ )
+// выведите массив со всеми подобными сочетаниями в строке (не забудьте добавить символ g - global для вывода всех сочетаний)
+
+console.log(str5.search(/\d/));
+console.log(str5.search(/\.n/));  //???
+console.log(str5.match(/\d\w/));
+console.log(str5.match(/\d\w/g));
+
+
+
+
+
+
