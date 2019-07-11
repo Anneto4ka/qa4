@@ -1,0 +1,36 @@
+Написать функцию splitStr, которая принимает строку
+// и возвращает массив символов из этой строки                         Hanna Skoropadska
+// пример: для строки 'string'
+// должен вернуться результат ["s", "t", "r", "i", "n", "g"]
+
+let str = 'string';
+function splitStr(str) {
+  let arr = [];
+  for (let i = 0; i < str.length; i++) {
+    arr.push(str[i]);
+  } 
+  return arr;
+} 
+
+console.log (splitStr(str));
+
+ 
+// Усложнение: написать функцию splitStrNoSpace, которая принимает строку
+// и возвращает массив символов из этой строки кроме пробелов
+// пример: для строки 'ab cd'
+// должен вернуться результат ["a", "b", "c", "d"] <- правильно
+// !!!а НЕ такой: ["a", "b", " ", "c", "d"] <- неправильно
+
+
+let str1 = 'ab cd';
+
+
+function splitStrNoSpace (line) {
+  let arr = [];
+  for (let i = 0; i < line.length; i++) {
+    if (line[i] !== ' ') arr.push(line[i]);
+  } 
+  return arr;
+} 
+
+console.log (splitStrNoSpace(str1));
