@@ -1,0 +1,44 @@
+	[76, 18, ‘H’, 91, 27, ‘e’, 39 ‘l’, 13, 42, ‘l’, 52, ‘o’, 13] – 
+//      Выбрать из массива все элементы типа String и сложить их в 
+//      строку.
+
+let arr = [76, 18, 'H', 91, 27, 'e', 39, 'l', 13, 42, 'l', 52, 'o', 13];
+let str = '';
+for (let i = 0; i < arr.length; i++){
+  if (typeof arr[i] === 'string'){
+    str = str + arr[i];
+  }
+}
+console.log(str);
+
+
+
+// 2.	[76, 18, 'H', 91, 27, 'e', 39 'l', 13, 42, 'l', 52, 'o', 13] – 
+//      найти среднее арифметическое всех чисел в массиве.
+let arr1 = [76, 18, 'H', 91, 27, 'e', 39, 'l', 13, 42, 'l', 52, 'o', 13];
+let count = 0;
+let sum = 0;
+for (let i = 0; i < arr1.length; i++){
+  if (typeof arr1[i] === 'number'){
+    count++; 
+    sum += arr1[i]; 
+  }
+}
+let sumAver = sum / count;
+console.log(sumAver);
+
+// 3.	[93, 62, 71, 52, 66, 97, 33, 80, 34, 22] – 
+//отсортировать массив по убыванию.
+
+let arr2 = [93, 62, 71, 52, 66, 97, 33, 80, 34, 22];
+for (let i = 0; i < arr2.length-1; i++){
+  let temp = 0;
+  for (let j = 0; j < arr2.length-1 -i; j++){
+    if (arr2[j] > arr2[j + 1]) {
+      temp = arr2[j];
+      arr2[j] = arr2[j + 1];
+      arr2[j + 1] = temp;
+    }
+  }
+}
+  console.log(arr2);
